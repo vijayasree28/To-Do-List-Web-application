@@ -1,0 +1,46 @@
+<div class="panel panel-default" ng-controller="UserController as ctrl">
+<div class="panel heading">
+
+</div>
+<div class="formcontainer">
+<form ng-submit="ctrl.submit()" name="myForm" class="form-horizontal">
+
+
+<p style="text-align:center;font-family:courier;font-size: 20px;color:#00FFFF;font-weight:bold">Welcome To Register</p>
+
+
+
+  <label for="username">Name</label>
+  <input type="text" id="username" ng-model="ctrl.user.username">
+  
+  <label for="email">Email</label>
+  <input type="text" id="email" ng-model="ctrl.user.email">
+  
+  <label for="password">Password</label>
+  <input type="password" id="password" ng-model="ctrl.user.password">
+  
+  <label for="confirmpassword">Confirm Password</label>
+  <input type="password" id="confirmpassword" ng-model="ctrl.user.confirmpassword">
+  
+  <label for="contact">Contact No</label>
+  <input type="text" id="contact" ng-model="ctrl.user.contact">
+  
+  <label for="city">Location</label>
+  <input type="text" id="city" ng-model="ctrl.user.city">
+  
+  <div class="row">
+  <div class="form-actions">
+<input type="submit" value="Register" class="btn btn-success">Registered Successfully<br/>
+<button type="button" ng-click="ctrl.reset()" class="btn btn-info">Cancel</button>
+</div>
+  </div> 
+  
+  
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+</div>

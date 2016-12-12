@@ -1,0 +1,165 @@
+ <!DOCTYPE>
+<html ng-app="myApp" >
+<head>
+<title>Banker's Plan</title>
+<meta charset="ISO-8859-1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+<script	src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.js"></script>
+	
+			
+<style>
+body{ padding-left:20px;
+padding-right:20px;
+padding-top:50px;
+}
+a:hover {background-color: #00BFFF;
+color:#FFFFFF
+}
+.navbar .nav > li > a:hover { 
+background-color: #00BFFF;
+color:#FFFFFF
+}
+.navbar .nav > li{
+color:#FFFFFF;
+font-family:Sofia;
+}
+.navbar .nav > ul > a{
+color:#000000;
+font-weight: bold;
+font-family:Sofia;
+}
+
+.navbar .nav > li > a{
+color:#00008B;
+font-weight: bold;
+font-family:Sofia;
+}
+.navbar .navbar-brand{
+font-size: 40px;
+font-style: normal;
+font-weight: bold;
+color: #000080;
+}
+.dropdown-menu > li > a:hover {
+    background-color:#000000;
+    background-image:none;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: #40E0D0;
+    color: white;
+}
+input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: #40E0D0;
+    color: white;
+}
+input[type=textarea] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: #40E0D0;
+    color: white;
+}
+
+</style>
+
+</head>
+<body>
+
+	  <div class="navbar navbar-static-top" role="navigation">	
+   
+	<div class="navbar-header">
+        <div class="navbar-header"><a class="navbar-brand" href="#/" style="color:Black;"><center>Banker's Plan</center></a></div>
+			</div>
+	
+	<div class="collapse navbar-collapse" ng-controller="UserController as ctrl">
+		<ul class="nav navbar-nav pull-right">
+			<li class="dropdown" >
+			 
+              <a href="#/tasklist" class="dropdown-toggle" data-toggle="dropdown" style="color:Black;">Task <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#/createtask" >Create Task</a></li>
+               
+                </ul>
+            </li>
+			
+		</ul>
+		
+		<ul class="nav navbar-nav pull-right">
+		<li ng-hide="currentUser==''" ng-click="ctrl.logout()">
+		<a href="#/" type="button" class="btn btn-danger navbar-btn">Log Out</a></li>	
+		
+		<li ng-show="currentUser==''"> <a href="#/about" style="color:Black;">About Us</a> </li>
+		
+		<li ng-show="currentUser==''">	<a href="#/contact" style="color:Black;">Contact Us</a></li>
+		
+		<li ng-show="currentUser==''">	<a href="#/signup" style="color:Black;">Sign Up</a></li>
+			
+			
+		<li ng-show="currentUser==''"><a href="#/login" style="color:Black;">Log In</a></li>
+	     
+			
+		</ul>
+   
+	</div>
+</div>
+
+  
+
+<div ng-view></div>
+  
+ 
+  
+  <div class="navbar navbar-static-bottom" style="background-color:#40E0D0;color:#FFFFFF">
+		<div class="container" align="center">
+		
+				<p>Copyright @ Banker's Plan,2016.</p>
+				
+			</div>
+	</div>
+
+
+  <script src="app.js"></script>
+ <script src="to_home/HomeController.js"></script>
+ <script src="to_user/UserController.js"></script>
+ <script src="to_user/UserService.js"></script>
+ <script src="to_task/TaskController.js"></script>
+ <script src="to_task/TaskService.js"></script>
+ 

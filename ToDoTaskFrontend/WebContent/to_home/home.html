@@ -1,0 +1,31 @@
+ <div ng-controller="UserController as ctrl">
+
+
+<!-- WHEN NO ONE IS LOGGED IN -->
+<div ng-show="currentUser==''">
+<div class="row">
+
+<div class="col-sm-4">
+<img src="home.jpg">
+</div>
+</div> 
+</div>
+<div ng-hide="currentUser==''">
+<div class="nav navbar-nav navbar-left">Hi:
+{{ctrl.user.username}}</div>
+
+ <div class="row">
+
+<div class="col-sm-4">
+
+</div>
+
+<div class="col-sm-8">
+<p style="text-align:center;font-family:courier;font-size: 30px;color:#00008B;font-weight:bold">
+<span class="glyphicon glyphicon-list"> List of task applications</span>
+
+</div>
+
+</div> 
+</div>
+</div>
