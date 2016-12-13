@@ -22,6 +22,8 @@ import com.task.model.Task;
 import com.task.model.User;
 
 
+
+
 @Configuration
 @ComponentScan("com.task")
 @EnableTransactionManagement
@@ -44,7 +46,7 @@ public class ApplicationContextConfig {
     	Properties properties = new Properties();
     	properties.put("hibernate.show_sql", "true");
     	System.out.println("Inside Application Context--Two");
-    	properties.put("hibernate.hbm2ddl.auto", "create");
+    	properties.put("hibernate.hbm2ddl.auto", "update");
     
     	properties.put("hibernate.dialect", "org.hibernate.dialect.HSQLDialect");
     	return properties;
@@ -88,7 +90,7 @@ public class ApplicationContextConfig {
 	}
 
 	@Autowired
-	@Bean(name = "tasksDAO")
+	@Bean(name = "taskDAO")
 	public TaskDAO getTaskDAO(SessionFactory sessionFactory) {
 		return new TaskDAOImpl(sessionFactory);
 	}

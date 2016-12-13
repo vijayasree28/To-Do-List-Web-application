@@ -1,0 +1,11 @@
+com\task\doa\TaskDAO.class
+com\task\controller\TaskController.class
+com\task\model\Task.class
+com\task\controller\UserController.class
+com\task\doa\UserDAO.class
+com\task\controller\HomeController.class
+com\task\doa\UserDAOImpl.class
+com\task\model\User.class
+com\task\doa\TaskDAOImpl.class
+com\task\config\ApplicationContextConfig.class
+com\task\model\ErrorMessage.class

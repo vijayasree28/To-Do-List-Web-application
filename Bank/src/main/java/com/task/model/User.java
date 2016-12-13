@@ -4,8 +4,9 @@ package com.task.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
+//import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.Size;
@@ -19,8 +20,9 @@ import org.springframework.stereotype.Component;
 public class User extends ErrorMessage {
 	
 	@Id
-	@GeneratedValue(generator="InvSeq") //InventorySequence
-    @SequenceGenerator(name="InvSeq",sequenceName="USERDATA_SEQ", allocationSize=1) //size can be upto 5
+	//@GeneratedValue(generator="InvSeq") //InventorySequence
+   //@SequenceGenerator(name="InvSeq",sequenceName="USERDATA_SEQ", allocationSize=1) //size can be upto 5
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int userid;
 
 	@NotEmpty

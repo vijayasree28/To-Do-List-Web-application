@@ -64,7 +64,7 @@ public class TaskDAOImpl implements TaskDAO {
 	
 	@Transactional
 	public Task get(int taskid) {
-		String hql = "from Tasks where taskid=" + taskid ;
+		String hql = "from Task where taskid=" + taskid ;
 
 		@SuppressWarnings("rawtypes")
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);

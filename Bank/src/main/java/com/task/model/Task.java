@@ -2,8 +2,9 @@ package com.task.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
+//import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.NotEmpty;
@@ -15,8 +16,11 @@ import org.springframework.stereotype.Component;
 public class Task  extends ErrorMessage{
 	
 	@Id
-	@GeneratedValue(generator="InvSeq") //InventorySequence
-    @SequenceGenerator(name="InvSeq",sequenceName="TASKS_SEQ", allocationSize=1) 
+	//@GeneratedValue(generator="InvSeq") //InventorySequence
+    //@SequenceGenerator(name="InvSeq",sequenceName="TASKS_SEQ", allocationSize=1) 
+	
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	
 	private int taskid;
 	@NotEmpty(message="Please fill the title")
 	private String title;

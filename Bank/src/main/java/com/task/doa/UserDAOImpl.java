@@ -10,6 +10,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.task.model.User;
 
+
+
+
+
 @SuppressWarnings("deprecation")
 @Repository(value = "UserDAO")
 public class UserDAOImpl implements UserDAO {
@@ -60,7 +64,7 @@ public class UserDAOImpl implements UserDAO {
 	}
 	@Transactional
 	public User get(int userID) {
-		String hql = "from User where user_id=" + userID ;
+		String hql = "from User where userid=" + userID ;
 
 		@SuppressWarnings("rawtypes")
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
@@ -98,7 +102,7 @@ public class UserDAOImpl implements UserDAO {
 	@SuppressWarnings("unchecked")
 	@Transactional
 	public List<User> list() {
-		String hql = " from UserInfo";
+		String hql = " from User";
 		@SuppressWarnings("rawtypes")
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		return query.list();
@@ -106,7 +110,7 @@ public class UserDAOImpl implements UserDAO {
 	}
 	@Transactional
 	public User isValidUser(String email, String password) {
-		String hql = "from UserInfo where email = '" + email + "' and password='" + password + "'";
+		String hql = "from User where email = '" + email + "' and password='" + password + "'";
 		@SuppressWarnings("rawtypes")
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		@SuppressWarnings("unchecked")
